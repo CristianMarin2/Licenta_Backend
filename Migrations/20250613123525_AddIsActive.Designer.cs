@@ -12,8 +12,8 @@ using SelfCheckoutSystem.Data;
 namespace SelfCheckoutSystem.Migrations
 {
     [DbContext(typeof(SelfCheckoutDbContext))]
-    [Migration("20250523130056_AddTransactionsNumber")]
-    partial class AddTransactionsNumber
+    [Migration("20250613123525_AddIsActive")]
+    partial class AddIsActive
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -160,6 +160,9 @@ namespace SelfCheckoutSystem.Migrations
                 {
                     b.Property<string>("EmployeeCode")
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
 
                     b.Property<string>("PasswordHash")
                         .IsRequired()

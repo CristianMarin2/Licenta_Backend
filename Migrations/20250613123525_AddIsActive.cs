@@ -5,25 +5,25 @@
 namespace SelfCheckoutSystem.Migrations
 {
     /// <inheritdoc />
-    public partial class AddTransactionsNumber : Migration
+    public partial class AddIsActive : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<string>(
-                name: "TransactionNumber",
-                table: "SaleItems",
-                type: "nvarchar(max)",
+            migrationBuilder.AddColumn<bool>(
+                name: "IsActive",
+                table: "Users",
+                type: "bit",
                 nullable: false,
-                defaultValue: "");
+                defaultValue: false);
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropColumn(
-                name: "TransactionNumber",
-                table: "SaleItems");
+                name: "IsActive",
+                table: "Users");
         }
     }
 }

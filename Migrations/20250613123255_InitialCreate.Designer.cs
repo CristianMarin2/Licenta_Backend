@@ -12,8 +12,8 @@ using SelfCheckoutSystem.Data;
 namespace SelfCheckoutSystem.Migrations
 {
     [DbContext(typeof(SelfCheckoutDbContext))]
-    [Migration("20250522172749_FormatTransactionNumber")]
-    partial class FormatTransactionNumber
+    [Migration("20250613123255_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -63,6 +63,10 @@ namespace SelfCheckoutSystem.Migrations
 
                     b.Property<Guid>("TransactionId")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("TransactionNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("UnitPrice")
                         .HasColumnType("decimal(18,2)");

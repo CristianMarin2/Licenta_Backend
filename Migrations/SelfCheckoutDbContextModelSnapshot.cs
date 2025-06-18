@@ -158,6 +158,9 @@ namespace SelfCheckoutSystem.Migrations
                     b.Property<string>("EmployeeCode")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
                     b.Property<string>("PasswordHash")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");

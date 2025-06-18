@@ -17,6 +17,10 @@ public class User
 
     public string Role { get; set; } = "Cashier";
 
+    
+    [Required]
+    public bool IsActive { get; set; } = true;
+
     [JsonIgnore]
     public List<SaleSession> SaleSessions { get; set; } = new();
 }
