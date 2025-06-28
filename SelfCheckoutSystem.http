@@ -1,0 +1,6 @@
+@SelfCheckoutSystem_HostAddress = http://localhost:5032
+
+GET {{SelfCheckoutSystem_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
